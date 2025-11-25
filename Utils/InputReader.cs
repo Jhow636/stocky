@@ -28,5 +28,15 @@ namespace Stocky.Utils
                 Console.WriteLine("Input cannot be empty.");
             }
         }
+
+        public static decimal ReadDecimal(string message)
+        {
+            while (true)
+            {
+                Console.Write(message);
+                if (decimal.TryParse(Console.ReadLine(), out var d)) return d;
+                Console.WriteLine("Invalid decimal. Try again.");
+            }
+        }
     }
 }
